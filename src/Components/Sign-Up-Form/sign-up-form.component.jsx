@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Form } from "react-router-dom";
 import {
   createAuthUserWithEmailAndPassword,
   createUserDocFromAuth,
@@ -33,6 +32,7 @@ const SignUpForm = () => {
         email,
         password
       );
+
       await createUserDocFromAuth(user, { displayName });
       resetFormFields();
     } catch (err) {

@@ -11,8 +11,8 @@ const Footer = () => {
           and we offer an alternative way of thinking and living.
         </p>
         <div className="socials">
-          <i class="fa-brands fa-instagram"></i>
-          <i class="fa-brands fa-facebook"></i>
+          <i className="fa-brands fa-instagram"></i>
+          <i className="fa-brands fa-facebook"></i>
         </div>
       </div>
 
