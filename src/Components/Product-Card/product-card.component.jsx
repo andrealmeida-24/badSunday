@@ -18,7 +18,7 @@ const ProductCard = ({ product }) => {
       <div className="footer">
         <div className="footer-left-side">
           <span className="name">{name}</span>
-          <span className="price">{`$${price}`}</span>
+          <span className="price">{`${price}€`}</span>
         </div>
         <div className="footer-right-side">
           <span className="add-to-cart" onClick={addProductToCart}>

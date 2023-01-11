@@ -77,10 +77,32 @@
     margin: 2em 0;
   }
 
+  .cart-subtotal {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+    p,
+    span {
+      font-size: 1em;
+      font-weight: 600;
+    }
+
+    span {
+    }
+  }
+
+  .cart-discount-info {
+    margin: 0 auto 1em 0;
+    font-size: 0.75em;
+  }
+
   button {
     width: 100%;
     letter-spacing: 0.5px;
-    font-size: 0.8em;
+    font-size: 0.85em;
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
     border: none;
@@ -114,21 +136,30 @@
     margin: 1em 0 2em 0;
 
     .payment-title {
-      font-size: 0.8em;
+      font-size: 0.85em;
       margin-bottom: 0.25em;
     }
 
-    .payment-option {
-      width: 90%;
-      border: 1px solid grey;
-      border-radius: 2px;
-      padding: 0.1em;
-      filter: grayscale(100%);
-      -webkit-filter: grayscale(100%);
+    .payment-option-images {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
 
-      &:hover {
-        filter: grayscale(0%);
-        -webkit-filter: grayscale(0%);
+      .payment-option {
+        margin: 2px;
+        max-width: 40px;
+        height: 18px;
+        border: 1px solid rgb(149, 149, 149);
+
+        border-radius: 2px;
+        padding: 0.1em;
+        filter: grayscale(100%);
+        -webkit-filter: grayscale(100%);
+
+        &:hover {
+          filter: grayscale(0%);
+          -webkit-filter: grayscale(0%);
+        }
       }
     }
   }
