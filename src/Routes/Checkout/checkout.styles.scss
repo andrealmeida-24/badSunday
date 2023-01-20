@@ -290,8 +290,6 @@
     align-items: center;
     justify-content: center;
     margin-top: 1em;
-    text-decoration: none;
-    color: black;
 
     .goToCheckout {
       font-size: 1em;
@@ -304,6 +302,8 @@
       text-transform: uppercase;
       letter-spacing: 1px;
       border-radius: 5px;
+      text-decoration: none;
+      color: black;
 
       margin-bottom: 1em;
 
@@ -325,6 +325,8 @@
 
       .icon {
         margin-right: 5px;
+        text-decoration: none;
+        color: black;
       }
     }
   }
