@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { RxCross1 } from "react-icons/rx";
+import { BsTrash } from "react-icons/bs";
 
 export const CartItemComponent_Container = styled.div`
   height: 80px;
@@ -53,28 +53,13 @@ export const CartItemComponent_ItemQuantity = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  margin-top: 5px;
 `;
 
-export const RemoveFromCart = styled(RxCross1)`
+export const RemoveFromCart = styled(BsTrash)`
   font-size: 0.85em;
   font-weight: 500;
   cursor: pointer;
   margin-right: 0.25em;
+  color: black;
 `;
-
-{
-  /*
-
-
-
-
-  //media: mobile landscape
-  @media screen and (max-width: 767px) and (orientation: landscape) {
-    .item-details {
-      width: 90%;
-    }
-  }
-}
-
-*/
-}

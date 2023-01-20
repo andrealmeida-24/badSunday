@@ -30,8 +30,8 @@ const Checkout = () => {
   const navigate = useNavigate();
 
   const goToHomePage = () => {
-    navigate("/");
     toogleCartIsOpen(!cartIsOpen);
+    navigate("/");
   };
 
   const goToCart = () => {
@@ -40,7 +40,7 @@ const Checkout = () => {
 
   const goToAuth = () => {
     //navigate to auth & close basket
-    toogleCartIsOpen();
+    toogleCartIsOpen(!cartIsOpen);
     navigate("/auth");
   };
 

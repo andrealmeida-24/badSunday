@@ -15,6 +15,7 @@ const CartItem = ({ cartItem }) => {
   const removeItemFromCart = () => {
     removeItemToCart(cartItem);
   };
+
   return (
     <CartItemComponent_Container>
       <img src={imageUrl} alt={name} />

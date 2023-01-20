@@ -18,7 +18,7 @@ const ProductCard = ({ product }) => {
   };
 
   return (
-    <ProductCardComponent_Card>
+    <ProductCardComponent_Card onClick={addProductToCart}>
       <img src={imageUrl} alt={name} />
       <ProductCardComponent_CardInfo>
         <ProductCardComponent_CardInfo_NamePrice>

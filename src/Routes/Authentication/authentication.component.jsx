@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import SignUpForm from "../../Components/Sign-Up-Form/sign-up-form.component";
 import SignInForm from "../../Components/Sign-In-Form/sign-in-form.component";
 import { UserContext } from "../../Contexts/user.context";
@@ -11,6 +11,11 @@ import {
 
 const Authentication = () => {
   const { currentUser } = useContext(UserContext);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
       {!currentUser && (
