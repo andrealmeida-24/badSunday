@@ -130,6 +130,8 @@
           outline: none;
           cursor: pointer;
           background-color: #c0c0c0;
+          text-decoration: none;
+          color: black;
 
           .icon {
             font-size: 1.5em;
@@ -288,6 +290,8 @@
     align-items: center;
     justify-content: center;
     margin-top: 1em;
+    text-decoration: none;
+    color: black;
 
     .goToCheckout {
       font-size: 1em;

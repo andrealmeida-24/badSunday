@@ -18,6 +18,8 @@ const ButtonMainStyles = css`
   align-self: center;
   margin: 0.25em;
   height: 2.5em;
+  text-direction: none;
+  color: black;
 `;
 
 const PaymentOptionStyles = css`
