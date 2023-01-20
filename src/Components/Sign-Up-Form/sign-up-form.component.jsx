@@ -4,8 +4,13 @@ import {
   createUserDocFromAuth,
 } from "../../Utilities/Firebase/firebase.utils";
 import FormInput from "../Form-Input/form-input.component";
-import "./sign-up-form.styles.scss";
 import Button from "../Button/button.component";
+
+import {
+  FormContainer_SignUp,
+  FormContainer_SignUp_Title,
+  FormContainer_SignUp_Subtitle,
+} from "./sign-up-form.styles";
 
 const defaultFormState = {
   displayName: "",
@@ -49,9 +54,13 @@ const SignUpForm = () => {
   };
 
   return (
-    <div className="sign-up-container">
-      <h2>Dont have an account?</h2>
-      <span>Sign Up with your Email and Password</span>
+    <FormContainer_SignUp>
+      <FormContainer_SignUp_Title>
+        Don't have an account?
+      </FormContainer_SignUp_Title>
+      <FormContainer_SignUp_Subtitle>
+        Sign Up with your Email and Password
+      </FormContainer_SignUp_Subtitle>
       <form onSubmit={handleSubmit}>
         <FormInput
           label="Display Name"
@@ -90,7 +99,7 @@ const SignUpForm = () => {
         />
         <Button type="submit">Sign Up</Button>
       </form>
-    </div>
+    </FormContainer_SignUp>
   );
 };
 

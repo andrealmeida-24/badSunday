@@ -9,6 +9,7 @@ import { RxCross1 } from "react-icons/rx";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
+import { UserContext } from "../../Contexts/user.context";
 import { CartContext } from "../../Contexts/cart.context";
 import Modal from "react-modal";
 import CheckoutCartItem from "../../Components/Checkout-Cart-Item/checkout-cartItem.component";
@@ -22,6 +23,7 @@ const Checkout = () => {
   const [shippingModalIsOpen, setShippingModalIsOpen] = useState(false);
   const { cartIsOpen, setCartIsOpen, cartItems, cartTotal } =
     useContext(CartContext);
+  const { currentUser } = useContext(UserContext);
 
   const toogleCartIsOpen = () => setCartIsOpen(!cartIsOpen);
 
@@ -207,17 +209,29 @@ const Checkout = () => {
           <div className="checkout-info-form">
             <span>OR</span>
             <hr />
-            <div className="checkout-info-form-sign-in">
-              <p>Already have an account?</p>
-              <h1 onClick={goToAuth}>Sign In</h1>
-            </div>
+            {!currentUser ? (
+              <div className="checkout-info-form-sign-in">
+                <p>Already have an account?</p>
+                <h1 onClick={goToAuth}>Sign In</h1>
+              </div>
+            ) : (
+              <div className="checkout-info-form-signed">
+                <p>Welcome,</p>
+                <h1>{currentUser.email}</h1>
+              </div>
+            )}
           </div>
         </div>
       </div>
-      <button className="checkout-return" onClick={goToCart}>
-        <FaArrowLeft className="icon" />
-        Return to cart
-      </button>
+
+      <div className="checkout-buttons">
+        <button className="goToCheckout">Continue to Shipping</button>
+
+        <button className="checkout-return" onClick={goToCart}>
+          <FaArrowLeft className="icon" />
+          Return to cart
+        </button>
+      </div>
 
       <div className="checkout-footer-policies">
         <hr />

@@ -1,8 +1,15 @@
+import { useNavigate } from "react-router-dom";
+
 import "./second-line.styles.scss";
 
 const SecondLineCategory = ({ category }) => {
+  const navigate = useNavigate();
+
   return (
-    <div className="category-container">
+    <div
+      onClick={() => navigate(category.route)}
+      className="category-container"
+    >
       <div
         className="background-image"
         style={{ backgroundImage: `url(${category.imageUrl})` }}

@@ -1,8 +1,15 @@
+import { useNavigate } from "react-router-dom";
+
 import "./first-line.styles.scss";
 
 const FirstLineCategory = ({ category }) => {
+  const navigate = useNavigate();
+
   return (
-    <div className="category-container-firstLine">
+    <div
+      onClick={() => navigate(category.route)}
+      className="category-container-firstLine"
+    >
       <div
         className="background-image"
         style={{ backgroundImage: `url(${category.imageUrl})` }}

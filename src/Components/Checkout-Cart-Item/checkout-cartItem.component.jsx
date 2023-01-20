@@ -1,23 +1,28 @@
-import "./checkout-cartItem.styles.scss";
+import {
+  CheckoutCartItem_Container,
+  CheckoutCartItem_Image_Container,
+  CheckoutCartItem_Info_Name,
+  CheckoutCartItem_Info_Price,
+} from "./checkout-cartItem.styles";
 
 const CheckoutCartItem = ({ cartItem }) => {
   const { imageUrl, name, price, quantity } = cartItem;
 
   return (
-    <div className="checkout-cart-item">
-      <div className="cart-item-image">
+    <CheckoutCartItem_Container>
+      <CheckoutCartItem_Image_Container>
         <img src={imageUrl} alt={name} />
         <span>{quantity}</span>
-      </div>
+      </CheckoutCartItem_Image_Container>
 
-      <div className="cart-item-info">
+      <CheckoutCartItem_Info_Name>
         <h1>{name}</h1>
-      </div>
+      </CheckoutCartItem_Info_Name>
 
-      <div className="cart-item-price">
+      <CheckoutCartItem_Info_Price>
         <h1>{`${price * quantity}€`}</h1>
-      </div>
-    </div>
+      </CheckoutCartItem_Info_Price>
+    </CheckoutCartItem_Container>
   );
 };
 

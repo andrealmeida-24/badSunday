@@ -1,45 +1,71 @@
-import "./footer.styles.scss";
-import { ReactComponent as StripeLogo } from "../../Assets/Images/stripe-seeklogo.com.svg";
+import { FaInstagram } from "react-icons/fa";
+import { AiFillFacebook } from "react-icons/ai";
+
+import {
+  FooterComponent,
+  FooterComponent_Info,
+  FooterComponent_Logo,
+  FooterComponent_InfoTitle,
+  FooterComponent_InfoBrand,
+  FooterComponent_Socials,
+  FooterComponent_SocialIcon,
+  FooterComponent_Link,
+  Stripe,
+  Amazon,
+  Apple,
+  PayPal,
+} from "./footer.styles.jsx";
 
 const Footer = () => {
   return (
-    <div className="footer-container">
-      <div className="footer-component brand">
-        <h1>bad sunday</h1>
-        <p>
+    <FooterComponent>
+      <FooterComponent_Info>
+        <FooterComponent_Logo>bad sunday</FooterComponent_Logo>
+        <FooterComponent_InfoBrand>
           We are a Portugal based clothing brand, inspired by self-expression
           and we offer an alternative way of thinking and living.
-        </p>
-        <div className="socials">
-          <i className="fa-brands fa-instagram"></i>
-          <i className="fa-brands fa-facebook"></i>
-        </div>
-      </div>
+        </FooterComponent_InfoBrand>
+        <FooterComponent_Socials>
+          <FooterComponent_SocialIcon>
+            <FaInstagram />
+            <AiFillFacebook />
+          </FooterComponent_SocialIcon>
+        </FooterComponent_Socials>
+      </FooterComponent_Info>
 
-      <div className="footer-component shop">
-        <h2>Shop</h2>
-        <span>All</span>
-        <span>New Arrivals</span>
-        <span>All Mens</span>
-        <span>All Womens</span>
-        <span>Sale</span>
-      </div>
+      <FooterComponent_Info>
+        <FooterComponent_InfoTitle>Shop</FooterComponent_InfoTitle>
+        <FooterComponent_Link to="/shop/mens">All Mens</FooterComponent_Link>
+        <FooterComponent_Link to="/shop/womens">
+          All Womens
+        </FooterComponent_Link>
+        <FooterComponent_Link to="/shop/hats">All Hats</FooterComponent_Link>
+        <FooterComponent_Link to="/shop/jackets">
+          All Jackets
+        </FooterComponent_Link>
+        <FooterComponent_Link to="/shop/sneakers">
+          All Sneakers
+        </FooterComponent_Link>
+      </FooterComponent_Info>
 
-      <div className="footer-component informations">
-        <h2>Information</h2>
-        <span>Contact Us</span>
-        <span>Delivery and Returns</span>
-        <span>FAQs</span>
-        <span>Terms & Conditions</span>
-        <span>Privacy Policy</span>
-        <span>Size Guide</span>
-      </div>
+      <FooterComponent_Info>
+        <FooterComponent_InfoTitle>Information</FooterComponent_InfoTitle>
+        <FooterComponent_Link>Contact Us</FooterComponent_Link>
+        <FooterComponent_Link>Delivery and Returns</FooterComponent_Link>
+        <FooterComponent_Link>FAQs</FooterComponent_Link>
+        <FooterComponent_Link>Terms & Conditions</FooterComponent_Link>
+        <FooterComponent_Link>Privacy Policy</FooterComponent_Link>
+        <FooterComponent_Link>Size Guide</FooterComponent_Link>
+      </FooterComponent_Info>
 
-      <div className="footer-component payment">
-        <h2>Paying Options</h2>
-        <StripeLogo className="payment-option" />
-      </div>
-    </div>
+      <FooterComponent_Info>
+        <FooterComponent_InfoTitle>Paying Options</FooterComponent_InfoTitle>
+        <Stripe />
+        <Amazon />
+        <Apple />
+        <PayPal />
+      </FooterComponent_Info>
+    </FooterComponent>
   );
 };
 
