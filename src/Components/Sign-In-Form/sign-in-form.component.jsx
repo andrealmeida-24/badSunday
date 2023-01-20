@@ -11,6 +11,7 @@ import {
   FormContainer_SignIn_Title,
   FormContainer_SignIn_Subtitle,
   FormContainer_SignIn_BtnsContainer,
+  GoogleLogo,
 } from "./sign-in-form.styles";
 
 const defaultFormState = {
@@ -96,7 +97,7 @@ const SignInForm = () => {
             buttonType={BUTTON_TYPE_CLASSES.google}
             onClick={signInWithGoogle}
           >
-            Google Sign-In
+            <GoogleLogo />
           </Button>
         </FormContainer_SignIn_BtnsContainer>
       </form>

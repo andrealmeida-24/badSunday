@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { ReactComponent as Google } from "../../Assets/Images/google_svg.svg";
 
 export const FormContainer_SignIn = styled.div`
   display: flex;
@@ -24,4 +25,9 @@ export const FormContainer_SignIn_BtnsContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+`;
+
+export const GoogleLogo = styled(Google)`
+  width: 100%;
+  transform: translateY(50%);
 `;
