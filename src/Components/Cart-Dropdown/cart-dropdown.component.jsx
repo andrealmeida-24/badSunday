@@ -85,9 +85,9 @@ const CartDropdown = () => {
             <span className="payment-title">Pay with</span>
             <CartDropdownComponent_Payments>
               <Stripe />
-              <Amazon />
+              {/*<Amazon />
               <Apple />
-              <PayPal />
+              <PayPal />*/}
             </CartDropdownComponent_Payments>
           </CartDropdownComponent_PaymentOptions>
         </CartDropdownComponent_Elements>

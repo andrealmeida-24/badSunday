@@ -1,3 +1,5 @@
+import { useSelector } from "react-redux";
+
 import { ReactComponent as StripeLogo } from "../../Assets/Images/stripe-seeklogo.com.svg";
 import { ReactComponent as AmazonPayLogo } from "../../Assets/Images/Amazon_Pay_logo.svg";
 import { ReactComponent as PayPalLogo } from "../../Assets/Images/PayPal.svg";
@@ -9,10 +11,11 @@ import { RxCross1 } from "react-icons/rx";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
-import { UserContext } from "../../Contexts/user.context";
 import { CartContext } from "../../Contexts/cart.context";
 import Modal from "react-modal";
 import CheckoutCartItem from "../../Components/Checkout-Cart-Item/checkout-cartItem.component";
+
+import PaymentForm from "../../Components/Payment-Form/payment-form.component";
 
 import "./checkout.styles.scss";
 
@@ -21,9 +24,10 @@ Modal.setAppElement("#root");
 const Checkout = () => {
   const [refundModalIsOpen, setRefundModalIsOpen] = useState(false);
   const [shippingModalIsOpen, setShippingModalIsOpen] = useState(false);
+  const [openStripeCheckout, setOpenStripeCheckout] = useState(false);
   const { cartIsOpen, setCartIsOpen, cartItems, cartTotal } =
     useContext(CartContext);
-  const { currentUser } = useContext(UserContext);
+  const currentUser = useSelector((state) => state.user.currentUser);
 
   const toogleCartIsOpen = () => setCartIsOpen(!cartIsOpen);
 
@@ -52,11 +56,30 @@ const Checkout = () => {
     setShippingModalIsOpen(!shippingModalIsOpen);
   };
 
+  const toogleStripeCheckout = () => {
+    setOpenStripeCheckout(!openStripeCheckout);
+  };
+
   return (
     <div className="checkout-container">
       <div className="checkout-nav" onClick={goToHomePage}>
         bad sunday
       </div>
+
+      <Modal
+        isOpen={openStripeCheckout}
+        onRequestClose={toogleStripeCheckout}
+        overlayClassName="modal-overlay"
+        className="modal-content stripe_modal"
+      >
+        <div className="modal-content-title">
+          <StripeLogo />
+          <span className="close" onClick={toogleStripeCheckout}>
+            <RxCross1 />
+          </span>
+        </div>
+        <PaymentForm />
+      </Modal>
 
       <Modal
         isOpen={refundModalIsOpen}
@@ -200,10 +223,13 @@ const Checkout = () => {
         <div className="checkout-others">
           <div className="checkout-express">
             <span>Express Checkout</span>
-            <StripeLogo className="payment-option stripe" />
-            <AmazonPayLogo className="payment-option amazon" />
+            <StripeLogo
+              className="payment-option stripe"
+              onClick={toogleStripeCheckout}
+            />
+            {/*<AmazonPayLogo className="payment-option amazon" />
             <PayPalLogo className="payment-option paypal" />
-            <ApplePayLogo className="payment-option apple" />
+            <ApplePayLogo className="payment-option apple" />*/}
           </div>
 
           <div className="checkout-info-form">

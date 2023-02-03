@@ -49,6 +49,24 @@
   }
 }
 
+.stripe_modal {
+  @media screen and (min-width: 1024px) {
+    width: 50%;
+    animation: showHide 125ms ease-in;
+
+    @keyframes showHide {
+      0% {
+        opacity: 0;
+        width: 0;
+      }
+      100% {
+        opacity: 1;
+        width: 50%;
+      }
+    }
+  }
+}
+
 .checkout-container {
   display: flex;
   flex-direction: column;

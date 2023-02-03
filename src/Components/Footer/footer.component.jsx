@@ -61,9 +61,10 @@ const Footer = () => {
       <FooterComponent_Info>
         <FooterComponent_InfoTitle>Paying Options</FooterComponent_InfoTitle>
         <Stripe />
-        <Amazon />
+        {/* <Amazon />
         <Apple />
         <PayPal />
+      */}
       </FooterComponent_Info>
     </FooterComponent>
   );

@@ -4,21 +4,25 @@ import "./index.scss";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
-import { UserProvider } from "../src/Contexts/user.context";
-import { CategoriesProvider } from "../src/Contexts/categories.context";
+import { Provider } from "react-redux";
+
+import { Elements } from "@stripe/react-stripe-js";
+import { stripePromise } from "./Utilities/stripe.utils";
+
 import { CartProvider } from "../src/Contexts/cart.context";
+import { store } from "./Redux_Store/store";
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <UserProvider>
-        <CategoriesProvider>
-          <CartProvider>
+    <Provider store={store}>
+      <BrowserRouter>
+        <CartProvider>
+          <Elements stripe={stripePromise}>
             <App />
-          </CartProvider>
-        </CategoriesProvider>
-      </UserProvider>
-    </BrowserRouter>
+          </Elements>
+        </CartProvider>
+      </BrowserRouter>
+    </Provider>
   </React.StrictMode>,
   document.getElementById("root")
 );
